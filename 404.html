@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/cv/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            @media print {
+                body{
+                    width: 21cm;
+                    height: 29.7cm;
+                    margin: 0; 
+                    font-size: 0.8em;
+                } 
+            }
+            @media screen {
+                body{
+                    margin: 2em 15%; 
+                } 
+            }
+            :root {
+                --banner-color: #323947;/*50,57,71*/
+            }
+	    </style>
+		
+		<link rel="modulepreload" href="/cv/_app/immutable/entry/start.xriq8lq9.js">
+		<link rel="modulepreload" href="/cv/_app/immutable/chunks/entry.auhIswBa.js">
+		<link rel="modulepreload" href="/cv/_app/immutable/chunks/scheduler.vu5OxXgN.js">
+		<link rel="modulepreload" href="/cv/_app/immutable/entry/app.DJwsiwyr.js">
+		<link rel="modulepreload" href="/cv/_app/immutable/chunks/index.JYX24v_U.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_1ejllg4 = {
+						base: "/cv",
+						assets: "/cv"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("/cv/_app/immutable/entry/start.xriq8lq9.js"),
+						import("/cv/_app/immutable/entry/app.DJwsiwyr.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
