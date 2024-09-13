@@ -4,6 +4,7 @@
 	import Skills from '$lib/components/Skills.svelte';
 	import Experience from '../lib/components/Experience.svelte';
 	import Personal from '../lib/components/Personal.svelte';
+	import Gcp from '../lib/components/Gcp.svelte';
 </script>
 
 <div class="root">

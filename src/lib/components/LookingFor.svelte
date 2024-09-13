@@ -31,7 +31,7 @@
 			>.
 		</div>
 		<div class="who">
-			<span class="em">Open-minded</span>, curious of others, I grow by making my
+			<span class="em">Open-minded</span>, curious of others, I grow by helping my
 			<span class="em">teammates be their best selves</span>.
 		</div>
 	</div>

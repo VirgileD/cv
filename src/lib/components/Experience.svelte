@@ -1,4 +1,21 @@
 <script>
+    import { page } from '$app/stores';
+    import { onMount } from 'svelte';
+
+    let view = 'none';
+    onMount(() => {
+        console.log($page.url.searchParams)
+        if($page.url.searchParams.get('full') != null) {
+            view = 'block'
+        }
+    });
+    const showDetails = (e, num) => {
+        const details = document.querySelector(`.details-${num}`);
+        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+        e.target.innerHTML = details.style.display === 'none' ? 'Show details ▼' : 'Hide details ▲';
+    };
+    
+
 </script>
 
 <div class="root">
@@ -6,12 +23,16 @@
 	<div class="experiences">
 		<div class="outer">
 			<div class="experience">
+				
+				
+				
 				<div class="info">
-					<div class="title-line">
-						<p class="title"><span class="introduce">as a</span> Senior R&D Engineer</p>
+					<div class="title-line" >
+                        <p class="title"><span class="introduce">as a</span> Senior R&D Engineer</p>
 						<p class="date">since 2018</p>
 					</div>
-					<div class="detail">
+                    <div class="resume"><div class="used">Python, NodeJs, AI, Infrastructure, Ops, Innovation, Techs Lifecycle...</div><button class="show" on:click={(e) => showDetails(e,1)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-1" style="display: {view}">
 						Awarded <span class="emp"
 							>"Senior Expert in Machine Learning, Data integration and Software"</span
 						>
@@ -60,26 +81,27 @@
 						</p>
 						<p class="date">from 2015 to 2017</p>
 					</div>
-					<div class="detail">
+                    <div class="resume"><div class="used">AI, NodeJs, Python, MongoDB, redis, Docker, Fraud detection, C++ ...</div><button class="show" on:click={(e) => showDetails(e,2)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-2" style="display: {view}">
 						Back from a BigData world, I then integrated the HPC team in R&D where I notably first
 						encountered AI.<br />
 						In a small team I worked mostly in autonomy, designing and developping several solutions,
 						e.g.:
 						<ul>
 							<li>
-								InstantScore: Containerized AI as a service solution with automatic model
+								<span class="emp">InstantScore: Containerized AI as a service</span> solution with automatic model
 								re-training. (NodeJs, Python, MongoDB, redis). Currently used in production for
 								fraud detection in Belgium issuing transactions (200K trx/day) and for predictive
 								maintenance for French ATMs (helped lower the overall downtime of the fleet by 15%).
 							</li>
 							<li>
-								SmartStream: real-time, lightweight, containerized, multi-languages data integration
-								toolkit; it is a pipeline of microservices not based on a message bus (Java, Python,
+								<span class="emp">SmartStream: real-time, lightweight, containerized, multi-languages data integration
+								toolkit</span>; it is a pipeline of microservices not based on a message bus (Java, Python,
 								ZMQ, Spring)
 							</li>
 							<li>
-								Digital-Signage: rework of an interactive advertising PoC with facial, gender and
-								age recognition and customers tracking; redesign of the architecture for
+								<span class="emp">Digital-Signage: rework of an interactive advertising PoC with facial, gender and
+								age recognition and customers tracking</span>; redesign of the architecture for
 								distributability, switch to more efficient technologies and libraries, rewriting of
 								tracking algorithms. Creation of the administration and statistics web service
 								(Java, C++, Python, Angular, OpenCv, Cuda, DLib, ZMQ, ...)
@@ -94,8 +116,9 @@
 						<p class="title"><span class="introduce">as a</span> Senior Data Engineer</p>
 						<p class="date">from 2013 to 2015</p>
 					</div>
-					<div class="detail">
-						I first led the technical side of the creation of the "BI & BigData Business Center".
+                    <div class="resume"><div class="used">BigData, NodeJs, Spark, Hadoop, ElasticSearch, MongoDB</div><button class="show" on:click={(e) => showDetails(e,3)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-3" style="display: {view}">
+						I first <span class="emp">led the technical side of the creation of the "BI & BigData Business Center"</span>.
 						With a marketing specialist we interviewed several Business Units Manager to gather
 						needs around the emerging topic of BigData and made several proposal for new assets and
 						services around the subject.<br />
@@ -103,7 +126,7 @@
 						operated as a trusted third party. We gathered from suppliers and partners personnal user
 						data that were then cleaned, processed and used to define very precise target for advertising
 						campaigns.<br />
-						We used, amongst others, the following technologies: Angular, NodeJS/HapiJS for the REST
+						We used, amongst others, the following technologies: Angular, NodeJs/HapiJS for the REST
 						API, Spark, Hadoop, ElasticSearch, MongoDB
 					</div>
 				</div>
@@ -114,15 +137,16 @@
 						<p class="title"><span class="introduce">as a</span> Senior R&D Engineer</p>
 						<p class="date">from 2010 to 2013</p>
 					</div>
-					<div class="detail">
+					<div class="resume"><div class="used">NodeJs/SocketIO, ElasticSearch, MongoDB, Pre-sales, ...</div><button class="show" on:click={(e) => showDetails(e,4)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-4" style="display: {view}">
 						After 2 years of managerial functions I wanted to return to a technical position and
 						integrated the "Prospective and Emerging Projects" team of the R&D department.<br />
 						This team of 5 enthousiast and talented engineers was developping proof-of-concepts and tooling
 						services to explore innovative technologies and usages.<br />
 						Our key achievment was the design and development of the first OpenData platform of the company,
 						"SmartData". After a first proof of concept using OSGi, Java Spring and CouchDB, we switched
-						to then emerging stacks: NodeJs/SocketIO, ElasticSearch and MongoDB.<br />
-						"SmartData" was kind of an automatic ETL as a service which could ingest, process, store,
+						to then emerging stacks: <span class="emp">NodeJs/SocketIO, ElasticSearch and MongoDB</span>.<br />
+						"SmartData" was kind of an <span class="emp">automatic ETL as a service</span> which could ingest, process, store,
 						and distribute semi-structured data from a wide range of formats though versatile and open
 						APIs.<br /><br />
 						While actively developping these solutions I also helped business units in pre-sales activities
@@ -136,7 +160,8 @@
 						<p class="title"><span class="introduce">as a</span> Team(s) Manager</p>
 						<p class="date">from 2008 to 2010</p>
 					</div>
-					<div class="detail">
+					<div class="resume"><div class="used">Managed 2 teams, Business, Product, Leadership, Innovation, Change mgmt, ...</div><button class="show" on:click={(e) => showDetails(e,5)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-5" style="display: {view}">
 						I first managed the team responsible for delivering the WebMail part (including the XML
 						APIs) of the "GoLive!" mail plateform. Under my leadership, we migrated from an in-house
 						JSP-like solution to generate the XML stream to an open-source stack and finally get rid
@@ -144,7 +169,7 @@
 						Then I also took responsability for the "Small Clients" business, including ISPs like DartyBox
 						or professionals like Allianz, PMU, ... The goal there was to prevent them from leaving,
 						which I did by simply restoring a transparent and honest relationship.<br />
-						Managed 10 Eng. (plus trainees) - 3.6M€CA<br /><br />
+						<span class="emp">Managed 10 Eng. (plus trainees) - 3.6M€CA</span><br /><br />
 						One of the best parts of the job, though, was to help restoring my teammates self-confidence,
 						motivating them to reach their full potential.
 					</div>
@@ -156,7 +181,8 @@
 						<p class="title"><span class="introduce">as a</span> Tech Leader</p>
 						<p class="date">from 2007 to 2008</p>
 					</div>
-					<div class="detail">
+					<div class="resume"><div class="used">Java, Build&Run, Mail Platform, Leadership, ...</div><button class="show" on:click={(e) => showDetails(e,6)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-6" style="display: {view}">
 						Technically leading the team (6 Eng.) responsible for specific developments and delivery
 						of the LaPoste.Net mail solution (23M mailboxes) based on an in-house mail platform
 						solution, "GoLive!"
@@ -169,21 +195,22 @@
 						<p class="title"><span class="introduce">as a</span> R&D Engineer</p>
 						<p class="date">at JetMultimedia from 2000 to 2007</p>
 					</div>
-					<div class="detail">
+					<div class="resume"><div class="used">MultiChannel, Vocal, C++, XML, ...</div><button class="show" on:click={(e) => showDetails(e,7)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-7" style="display: {view}">
 						I was developping services, used by the business units or our clients themselves to
 						developp added value services. E.g. :
 						<ul>
 							<li>
-								Easyclick: Access value-added webservices by calling premium phone number and
+								<span class="emp">Easyclick: Access value-added webservices</span> by calling premium phone number and
 								connect through the Easyclick proxy
 							</li>
-							<li>JvmlBrowser: an in-house precursor of a VoiceXml solution</li>
+							<li><span class="emp">JvmlBrowser: an in-house precursor of a VoiceXml solution</span></li>
 							<li>
-								VdxmlBrowser: allowing web developpers to easily deliver VideoText (Minitel)
-								applications
+								<span class="emp">VdxmlBrowser: allowing web developpers to easily deliver VideoText (Minitel)
+								applications</span>
 							</li>
 							<li>
-								Serpent: multi-agent software monitoring all JetMultimedia's services and
+								<span class="emp">Serpent: multi-agent software monitoring all company's services</span> and
 								infrastructure with automatic multi-channel alerting of operation teams.
 							</li>
 						</ul>
@@ -198,7 +225,8 @@
 						<p class="title"><span class="introduce">as a</span> Design And Development Engineer</p>
 						<p class="date">at CosmosBay from 1999 to 2000</p>
 					</div>
-					<div class="detail">
+					<div class="resume"><div class="used">MultiChannel, Internal/External Trainer, Consulting, ...</div><button class="show" on:click={(e) => showDetails(e,8)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-8" style="display: {view}">
 						During my first permanent contract, I studied and developed audiotel, minitel, web and
 						wap services (Crédit Agricole, Crédit Foncier Banque...) per day or project.<br />
 						I also rapidely became an internal and external trainer on the company's products, in particular
@@ -214,9 +242,10 @@
 				<div class="info">
 					<div class="title-line">
 						<p class="title"><span class="introduce">as a</span> Programming Analyst</p>
-						<p class="date">at multiple compnies from 1998 to 1999</p>
+						<p class="date">at multiple companies from 1998 to 1999</p>
 					</div>
-					<div class="detail">
+					<div class="resume"><div class="used">First Experiences, Discovering IT...</div><button class="show" on:click={(e) => showDetails(e,9)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
+					<div class="detail details-9" style="display: {view}">
 						As a contractor for multiple companies, I spent a year exploring the different
 						possibilities offered by my formation.<br />
 						I notably developed in Visual C++ in an industrial context, on mainframe for a notarial activities
@@ -421,4 +450,22 @@
 		margin: auto;
 		font-size: small;
 	}
+    .show {
+        z-index: 100;
+        background-color: var(--banner-color);
+        color: white;
+        border-radius: 0.7em;
+        padding: 0.3em;
+    }
+    .resume {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media print { 
+        .show {
+            display: none;
+        }
+    }
 </style>

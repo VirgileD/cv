@@ -9,15 +9,12 @@
 			<ul class="skills">
 				<li>NodeJs</li>
 				<li>Python</li>
-				<li>JavaScript</li>
-				<li>Git</li>
+                <li>Git - Gitlab CI/CD</li>
+                <li>Docker</li>
 				<li>Linux Admin</li>
-				<li>Shell scripting (Bash)</li>
-				<li>Gitlab CI/CD</li>
-				<li>Docker</li>
 				<li>MongoDB</li>
 				<li>Redis</li>
-				<li>Tests</li>
+                <li>Bash scripts</li>
 			</ul>
 		</div>
 		<div class="skill-level">
@@ -89,10 +86,15 @@
 		color: white;
 		padding: 1px 3px;
 		border-radius: 3px;
-		width: 13%;
+		width: 15%;
 		margin-top: 1em;
 		align-self: flex-start;
 	}
+    @media print { 
+        .level {
+            width: 18%;
+        }
+    }
 	.except {
 		margin-left: 2em;
 		margin-right: 1em;
