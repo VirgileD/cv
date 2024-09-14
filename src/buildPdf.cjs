@@ -9,7 +9,7 @@ const puppeteer = require('puppeteer');
     console.log("Creating page")
     const page = await browser.newPage();
     console.log("Navigating page")
-    await page.goto(`http://localhost:5173?${process.argv[2]}`, {
+    await page.goto(`http://localhost:5173?pdf`, {
         waitUntil: 'networkidle0'
     });
     console.log("Generating pdf")

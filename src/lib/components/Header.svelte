@@ -6,6 +6,10 @@
 	import DiplomaIcon from './icons/Diploma.svelte';
     import LinkedinIcon from './icons/Linkedin.svelte';
 	import Gcp from './Gcp.svelte';
+	import { page } from '$app/stores';
+    
+    const isPdf = $page.url.searchParams.has('pdf');
+
 </script>
 
 <div class="root">
@@ -48,9 +52,11 @@
             </div>
         </div>
     </div>
-    <div class="cv">
-        <div>All details at <a href="https://virgiled.github.io/cv" class="soft-link" target="_blank">https://virgiled.github.io/cv</a></div>
-    </div>
+	{#if !isPdf}
+		<div class="cv">
+			<div><a href="VirgileDevaux-CV-202409.pdf" class="soft-link" target="_blank">Get the pdf version!</a></div>
+		</div>
+	{/if}
 </div>
 
 <style>

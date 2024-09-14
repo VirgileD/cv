@@ -1,23 +1,3 @@
-<script>
-    import { page } from '$app/stores';
-    import { onMount } from 'svelte';
-
-    let view = 'none';
-    onMount(() => {
-        console.log($page.url.searchParams)
-        if($page.url.searchParams.get('full') != null) {
-            view = 'block'
-        }
-    });
-    const showDetails = (e, num) => {
-        const details = document.querySelector(`.details-${num}`);
-        details.style.display = details.style.display === 'none' ? 'block' : 'none';
-        e.target.innerHTML = details.style.display === 'none' ? 'Show details ▼' : 'Hide details ▲';
-    };
-    
-
-</script>
-
 <div class="root">
 	<div class="experiences-title-line">The things I do</div>
 	<div class="experiences">
@@ -31,8 +11,8 @@
                         <p class="title"><span class="introduce">as a</span> Senior R&D Engineer</p>
 						<p class="date">since 2018</p>
 					</div>
-                    <div class="resume"><div class="used">Python, NodeJs, AI, Infrastructure, Ops, Innovation, Techs Lifecycle...</div><button class="show" on:click={(e) => showDetails(e,1)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-1" style="display: {view}">
+                    <div class="resume"><div class="used">Python, NodeJs, AI, Infrastructure, Ops, Innovation, Techs Lifecycle...</div></div>
+					<div class="detail details-1" >
 						Awarded <span class="emp"
 							>"Senior Expert in Machine Learning, Data integration and Software"</span
 						>
@@ -81,8 +61,8 @@
 						</p>
 						<p class="date">from 2015 to 2017</p>
 					</div>
-                    <div class="resume"><div class="used">AI, NodeJs, Python, MongoDB, redis, Docker, Fraud detection, C++ ...</div><button class="show" on:click={(e) => showDetails(e,2)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-2" style="display: {view}">
+                    <div class="resume"><div class="used">AI, NodeJs, Python, MongoDB, redis, Docker, Fraud detection, C++ ...</div></div>
+					<div class="detail details-2" >
 						Back from a BigData world, I then integrated the HPC team in R&D where I notably first
 						encountered AI.<br />
 						In a small team I worked mostly in autonomy, designing and developping several solutions,
@@ -116,8 +96,8 @@
 						<p class="title"><span class="introduce">as a</span> Senior Data Engineer</p>
 						<p class="date">from 2013 to 2015</p>
 					</div>
-                    <div class="resume"><div class="used">BigData, NodeJs, Spark, Hadoop, ElasticSearch, MongoDB</div><button class="show" on:click={(e) => showDetails(e,3)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-3" style="display: {view}">
+                    <div class="resume"><div class="used">BigData, NodeJs, Spark, Hadoop, ElasticSearch, MongoDB</div></div>
+					<div class="detail details-3" >
 						I first <span class="emp">led the technical side of the creation of the "BI & BigData Business Center"</span>.
 						With a marketing specialist we interviewed several Business Units Manager to gather
 						needs around the emerging topic of BigData and made several proposal for new assets and
@@ -137,8 +117,8 @@
 						<p class="title"><span class="introduce">as a</span> Senior R&D Engineer</p>
 						<p class="date">from 2010 to 2013</p>
 					</div>
-					<div class="resume"><div class="used">NodeJs/SocketIO, ElasticSearch, MongoDB, Pre-sales, ...</div><button class="show" on:click={(e) => showDetails(e,4)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-4" style="display: {view}">
+					<div class="resume"><div class="used">NodeJs/SocketIO, ElasticSearch, MongoDB, Pre-sales, ...</div></div>
+					<div class="detail details-4" >
 						After 2 years of managerial functions I wanted to return to a technical position and
 						integrated the "Prospective and Emerging Projects" team of the R&D department.<br />
 						This team of 5 enthousiast and talented engineers was developping proof-of-concepts and tooling
@@ -160,8 +140,8 @@
 						<p class="title"><span class="introduce">as a</span> Team(s) Manager</p>
 						<p class="date">from 2008 to 2010</p>
 					</div>
-					<div class="resume"><div class="used">Managed 2 teams, Business, Product, Leadership, Innovation, Change mgmt, ...</div><button class="show" on:click={(e) => showDetails(e,5)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-5" style="display: {view}">
+					<div class="resume"><div class="used">Managed 2 teams, Business, Product, Leadership, Innovation, Change mgmt, ...</div></div>
+					<div class="detail details-5" >
 						I first managed the team responsible for delivering the WebMail part (including the XML
 						APIs) of the "GoLive!" mail plateform. Under my leadership, we migrated from an in-house
 						JSP-like solution to generate the XML stream to an open-source stack and finally get rid
@@ -181,8 +161,8 @@
 						<p class="title"><span class="introduce">as a</span> Tech Leader</p>
 						<p class="date">from 2007 to 2008</p>
 					</div>
-					<div class="resume"><div class="used">Java, Build&Run, Mail Platform, Leadership, ...</div><button class="show" on:click={(e) => showDetails(e,6)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-6" style="display: {view}">
+					<div class="resume"><div class="used">Java, Build&Run, Mail Platform, Leadership, ...</div></div>
+					<div class="detail details-6" >
 						Technically leading the team (6 Eng.) responsible for specific developments and delivery
 						of the LaPoste.Net mail solution (23M mailboxes) based on an in-house mail platform
 						solution, "GoLive!"
@@ -195,8 +175,8 @@
 						<p class="title"><span class="introduce">as a</span> R&D Engineer</p>
 						<p class="date">at JetMultimedia from 2000 to 2007</p>
 					</div>
-					<div class="resume"><div class="used">MultiChannel, Vocal, C++, XML, ...</div><button class="show" on:click={(e) => showDetails(e,7)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-7" style="display: {view}">
+					<div class="resume"><div class="used">MultiChannel, Vocal, C++, XML, ...</div></div>
+					<div class="detail details-7" >
 						I was developping services, used by the business units or our clients themselves to
 						developp added value services. E.g. :
 						<ul>
@@ -225,8 +205,8 @@
 						<p class="title"><span class="introduce">as a</span> Design And Development Engineer</p>
 						<p class="date">at CosmosBay from 1999 to 2000</p>
 					</div>
-					<div class="resume"><div class="used">MultiChannel, Internal/External Trainer, Consulting, ...</div><button class="show" on:click={(e) => showDetails(e,8)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-8" style="display: {view}">
+					<div class="resume"><div class="used">MultiChannel, Internal/External Trainer, Consulting, ...</div></div>
+					<div class="detail details-8" >
 						During my first permanent contract, I studied and developed audiotel, minitel, web and
 						wap services (Crédit Agricole, Crédit Foncier Banque...) per day or project.<br />
 						I also rapidely became an internal and external trainer on the company's products, in particular
@@ -244,8 +224,8 @@
 						<p class="title"><span class="introduce">as a</span> Programming Analyst</p>
 						<p class="date">at multiple companies from 1998 to 1999</p>
 					</div>
-					<div class="resume"><div class="used">First Experiences, Discovering IT...</div><button class="show" on:click={(e) => showDetails(e,9)}>{view === 'none' ? 'Show details ▼' : 'Hide details ▲'}</button></div>
-					<div class="detail details-9" style="display: {view}">
+					<div class="resume"><div class="used">First Experiences, Discovering IT...</div></div>
+					<div class="detail details-9" >
 						As a contractor for multiple companies, I spent a year exploring the different
 						possibilities offered by my formation.<br />
 						I notably developed in Visual C++ in an industrial context, on mainframe for a notarial activities

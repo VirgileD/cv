@@ -1,19 +1,28 @@
 <script>
+	import { page } from '$app/stores';
+    
+    const isPdf = $page.url.searchParams.has('pdf');
+	const imgSize = isPdf ? '102' : '172';
+	const gcpNewClass = isPdf ? 'pdf' : 'browser';
 </script>
 
 <div class="root">
-	<div class="gcp-new">
-		<img src="GCP.png" width="160" alt="gcp ace certified"/>
+	<div class="{gcpNewClass}">
+		<img src="GCP.png" width="{imgSize}" height="{imgSize}" alt="gcp ace certified"/>
 	</div>
 </div>
 
 <style>
-	.gcp-new {
-		width: 196px;
+	.pdf {
 		position: absolute;
 		z-index: 200;
-		top: 80px;
-		left: 950px;
-		transform: rotate(10deg);
+		top: 0cm;
+		left: 10.5cm;
+	}
+	.browser {
+		position: absolute;
+		z-index: 200;
+		top: 58px;
+		left: 850px;
 	}
 </style>
